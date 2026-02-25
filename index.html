@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>CLN STORE</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+}
+
+/* NAVBAR */
+
+nav{
+background:#111;
+padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav a{
+color:white;
+margin:15px;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+}
+
+nav a:hover{
+color:orange;
+}
+
+/* SECTIONS */
+
+section{
+display:none;
+padding:60px 20px;
+min-height:100vh;
+}
+
+/* HOME */
+
+#home{
+background:#2f2f2f;
+color:white;
+text-align:center;
+}
+
+/* PRODUCTS */
+
+#products{
+background:#8b6f6f;
+}
+
+.slider-container{
+display:flex;
+gap:25px;
+overflow-x:auto;
+padding:30px;
+scroll-behavior:smooth;
+}
+
+.product{
+width:230px;
+background:white;
+padding:18px;
+border-radius:18px;
+box-shadow:0 8px 25px rgba(0,0,0,.08);
+flex-shrink:0;
+text-align:center;
+transition:.3s;
+}
+
+.product:hover{
+transform:translateY(-6px);
+}
+
+.product img{
+width:100%;
+height:170px;
+object-fit:cover;
+border-radius:12px;
+}
+
+button{
+padding:8px 12px;
+background:#111;
+color:white;
+border:none;
+border-radius:6px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:orange;
+}
+
+/* CART BOX */
+
+.cart-box{
+position:fixed;
+right:20px;
+top:80px;
+width:260px;
+background:white;
+padding:12px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,0,0,.2);
+z-index:2000;
+font-size:14px;
+}
+
+#cart-items{
+max-height:150px;
+overflow-y:auto;
+}
+
+.popup{
+position:fixed;
+bottom:30px;
+right:30px;
+background:black;
+color:white;
+padding:12px 18px;
+border-radius:8px;
+display:none;
+}
+#contact{
+text-align:center;
+}
+
+#contact form{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
+#contact input,
+#contact select{
+width:250px;
+padding:10px;
+border-radius:6px;
+border:1px solid #ccc;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+<a onclick="showPage('home')">Home</a>
+<a onclick="showPage('products')">Products</a>
+<a onclick="showPage('about')">About</a>
+<a onclick="showPage('contact')">Contact</a>
+</nav>
+
+<!-- CART -->
+
+<div class="cart-box">
+🛒 Cart: <span id="cart-count">0</span><br>
+Total: ₱<span id="total-price">0</span>
+<hr>
+<div id="cart-items"></div>
+</div>
+
+<div id="popup" class="popup"></div>
+
+<!-- HOME -->
+
+<section id="home">
+
+<h1>CLN STORE</h1>
+
+<img src="logo.jpg" width="1000px">
+
+<p>CLN BRAND</p>
+
+<button onclick="showPage('products')">
+Shop Now
+</button>
+
+</section>
+
+<!-- PRODUCTS -->
+
+<section id="products">
+
+<h2 style="text-align:center">Our Products</h2>
+
+<div class="slider-container" id="productSlider"></div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section id="about">
+<h2>About Us</h2>
+    <p style="text-align: left;">CLN delivers stylish, high-quality pieces made to elevate your everyday look. <br> <br>
+
+Founded on the belief that true style is built on quality and intention, CLN was created for individuals who move with confidence.. <br>
+In a world of fast fashion and passing trends, we design pieces that endure in craftsmanship, in elegance, and in purpose..<br><br>
+
+CLN was created for those who value confidence in the details.  .<br>
+We design modern essentials from bags and wallets to sandals and signature scents made to elevate everyday life. <br>
+luxury should not shout. It should speak quietly through quality. <br><br>
+
+Our focus is simple: <br>
+Clean design, lasting quality, and effortless style thoughtfully crafted essentials that look good and feel even better.<br><br>
+
+
+CLN is crafted for discerning individuals, offering refined essentials that support both daily life and significant milestones with elegance and purpose.<br>
+
+Our core values:<br><br>
+
+Quality      – Every detail reflects care and precision.<br>
+Integrity    – Reliability and trust in everything we create.<br>
+Timelessness – Style and function built to last.<br><br>
+
+More than accessories, CLN represents confidence, refinement, and intention.It is a reminder that the essentials you choose reflect your style and how you carry them matters.<br><br>
+
+CLN Style, Perfected.</p>
+
+Your satisfaction is our priority, with every detail of your shopping made effortless.<p>.</p>
+</section>
+
+<!-- CONTACT -->
+
+<section id="contact">
+<h2>contact Us</h2>
+<p>We would love to hear from you!</p>
+<h2 style="text-align:center"></h2>
+
+    <form>
+         
+        
+        <input type="text" name="Nameinput" placeholder=" Name" ><br>
+
+        <input type="email" name="PasswordInput" placeholder="Email" ><br>
+        <input type="Phone" name="phoneInput" placeholder="Phone"><br>
+        <input type="submit" value="Register"><br>
+
+        <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </form>
+
+    <p style="margin-top:20px;">
+        📧 Email: CLN brand.com <br>
+        📞 Phone: +1 432 988 567 <br>
+        📍 Address: 166 Mabalact City
+    </p>
+</section>
+
+<footer>
+    © 2026 CLN STORE | All Rights Reserved
+</footer>
+
+
+<script>
+
+/* PAGE NAVIGATION */
+
+function showPage(id){
+
+document.querySelectorAll("section").forEach(s=>{
+s.style.display="none";
+});
+
+document.getElementById(id).style.display="block";
+}
+
+/* PRODUCTS DATA */
+
+let products = [
+["cln bag1.png","Faustine Tote Bag",2499],
+["cln bag 2.png","Dionne Crossbody Bag",2499],
+["cln bag 3.png","Cozy Tote Bag",2499],
+["cln bag 4.png","Porshia Crossbody Bag",2499],
+["cln bag 5.png","Ellisa Shoulder Bag",2499],
+
+["cln sandals 6.png","Shaylee Mary Janes",2499],
+["cln sandals 7.png","Palmetto Mary Janes",2499],
+["cln sandals 8.png","Gayle Ballerinas",2499],
+["cln sandals 9.png","Kazuha Sandals",2499],
+["cln sandals 10.png","Ardina Sandals",2499],
+
+["cln perfume 11.png","Avery Perfume",2499],
+["cln perfume 12.png","Olivia Perfume",2499],
+["cln persume 13.png","Giselle Perfume",2499],
+["cln perfume 14.png","Amber Perfume",2499],
+["cln perfume 15.png","Iris Perfume",2499]
+];
+
+/* CART SYSTEM */
+
+let cart=[];
+let total=0;
+
+function addToCart(price,name){
+
+cart.push({price,name});
+total+=price;
+
+updateCart();
+showPopup("Added to cart");
+}
+
+function removeItem(index){
+
+total-=cart[index].price;
+cart.splice(index,1);
+
+updateCart();
+showPopup(" Removed");
+}
+
+function updateCart(){
+
+document.getElementById("cart-count").innerText=cart.length;
+document.getElementById("total-price").innerText=
+total.toLocaleString();
+
+let box=document.getElementById("cart-items");
+box.innerHTML="";
+
+cart.forEach((item,i)=>{
+box.innerHTML+=`
+<div>
+${item.name} - ₱${item.price}
+<button onclick="removeItem(${i})">X</button>
+</div>
+`;
+});
+}
+
+function showPopup(msg){
+
+let popup=document.getElementById("popup");
+
+popup.innerText=msg;
+popup.style.display="block";
+
+setTimeout(()=>{
+popup.style.display="none";
+},2000);
+}
+
+/* LOAD PRODUCTS + DEFAULT PAGE */
+
+function loadProducts(){
+
+let slider=document.getElementById("productSlider");
+
+products.forEach(p=>{
+slider.innerHTML+=`
+<div class="product">
+<img src="${p[0]}">
+<h3>${p[1]}</h3>
+<p>₱${p[2]}</p>
+<button onclick="addToCart(${p[2]},'${p[1]}')">
+Add to Cart
+</button>
+</div>
+`;
+});
+
+}
+
+window.onload=function(){
+showPage("home");
+loadProducts();
+};
+
+</script>
+
+</body>
+</html>
